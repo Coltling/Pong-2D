@@ -19,6 +19,7 @@ public class BallManager : MonoBehaviour
         loadingBall = true; // Set the loadingBall flag to true to prevent multiple balls from being spawned simultaneously
         for(int i = 3; i > 0; i--)
         {
+            yield return new WaitForSeconds(0.5f);
             tmpCountdown.text = i.ToString(); // Update the countdown text to show the current countdown number
             yield return new WaitForSeconds(1f); // Wait for 1 second before continuing the loop
         }

@@ -8,6 +8,7 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerContols : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
+    [SerializeField] PauseManager pauseManager;
     private Rigidbody2D rbPlayer;
     private float moveDirection = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,6 +21,10 @@ public class PlayerContols : MonoBehaviour
     {
         moveDirection = clx.ReadValue<Vector2>().y; // Read the vertical component of the input vector
         //Debug.Log("Move Direction: " + moveDirection); // Log the move direction for debugging purposes
+    }
+    public void OnPause()
+    {
+        pauseManager.Pause(false); // Call the Pause method of the PauseManager to pause the game
     }
 
     // Update is called once per frame

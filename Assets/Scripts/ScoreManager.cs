@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] TextMeshPro scoreA;
     [SerializeField] TextMeshPro scoreB;
     [SerializeField] PauseManager pauseManager;
-    [SerializeField] int maxScore = 1;
+    [SerializeField] int maxScore = 10;
     public List<int> scores = new List<int>() { 0, 0 }; // Initialize the scores for both players to 0
     
     public void scoreGoal(int index)
